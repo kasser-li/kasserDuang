@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul,li{
+				list-style: none;
+				transition: all 1s;
+				}
+			ul li ul{
+				display: none;
+			}
+			.tree3{}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="tree" ><a href="javascript:void(0)">一级链接1</a>
+				<ul class="subnav" >
+					<li class="tree"><a href="javascript:void(0)">二级链接1.1</a>
+						<ul class="subnav">
+							<li class="there3">三级链接1.1.1</li>
+							<li class="there3">三级链接1.1.2</li>
+							<li class="there3">三级链接1.1.3</li>
+							<li class="there3">三级链接1.1.4</li>
+						</ul>
+					</li>
+					<li class="tree"><a href="javascript:void(0)">二级链接1.2</a>
+						<ul class="subnav">
+							<li class="there3">三级链接1.2.1</li>
+							<li class="there3">三级链接1.2.2</li>
+							<li class="there3">三级链接1.2.3</li>
+							<li class="there3">三级链接1.2.4</li>
+						</ul>
+					</li>
+			<!--		<li>二级链接1.2</li>-->
+				</ul>
+			</li>
+			
+			<li class="tree" ><a href="javascript:void(0)">一级链接2</a>
+				<ul class="subnav" style="background-color: rgba(33,33,33,.5);">
+					<li class="tree"><a href="javascript:void(0)">二级链接2.1</a>
+						<ul class="subnav">
+							<li class="there3">三级链接2.1.1</li>
+							<li class="there3">三级链接2.1.2</li>
+							<li class="there3">三级链接2.1.3</li>
+							<li class="there3">三级链接2.1.4</li>
+						</ul>
+					</li>
+					<li class="tree"><a href="javascript:void(0)">二级链接2.2</a>
+						<ul class="subnav">
+							<li class="there3">三级链接2.2.1</li>
+							<li class="there3">三级链接2.2.2</li>
+							<li class="there3">三级链接2.2.3</li>
+							<li class="there3">三级链接2.2.4</li>
+						</ul>
+					</li>
+			<!--		<li>二级链接1.2</li>-->
+				</ul>
+			</li>
+		</ul>
+	<script>
+	
+	window.onload=seton;
+	function seton(){
+		var tree=document.getElementsByClassName('tree');
+		
+		for(var i=0;i<tree.length;i++){
+			var a=tree[i].getElementsByTagName('a')[0];
+			var subnav=tree[i].getElementsByClassName('subnav')[0];
+			(function(p){
+				a.onclick=function(){
+					if(p.style.display=='block'){
+						p.style.display='none'
+					}
+					else{p.style.display='block'}
+				}
+			})
+			(subnav);
+		}
+	}
+document.cookie='name=li;path=/kasser'
+alert(document.cookie)
+localStorage.setItem('name', '曾庆林');
+		
+	</script>	
+	</body>
+</html>
